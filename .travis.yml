@@ -6,10 +6,32 @@ cache: npm
 
 script: npm run build
 
+jobs:
+  include:
+  - stage: build
+    script:
+    - npm ci
+    - CI=false npm run build
+  - stage: test
+    requires:
+      - build
+    script:
+    - npm run test
+  - stage: deploy
+    requires:
+      - build
+      - test
+
 deploy:
  provider: pages
  skip_cleanup: true
  github_token: $TOKEN
  local_dir: dist
  on:
-   branch: main
+   branch: master
+
+notifications:
+  email:
+    recipients:
+       - mngduyphuong@gmail.com
+    on_success: never
