@@ -5,7 +5,7 @@ module.exports = {
       ? '/swe30004/'
       : '/',
       css: {
-        extract: false
+        extract: true
         }
   }
   
