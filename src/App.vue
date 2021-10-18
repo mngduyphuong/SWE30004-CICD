@@ -2,7 +2,7 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <p>Testing auto deploy to github pages</p>
+    <p>Testing auto deploy to github pages version 2</p>
   </div>
 </template>
 
